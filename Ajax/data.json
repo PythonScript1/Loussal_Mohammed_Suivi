@@ -1,0 +1,20 @@
+{
+    "user 1" :{
+        "username": "Maryam",
+        "email": "maryam@gamil.com",
+        "password": "maryam123",
+        "phone": "06060600660"
+    },
+    "user 2" :{
+        "username": "Hafsa",
+        "email": "hafsa@gamil.com",
+        "password": "hafsa123",
+        "phone": "0606060606"
+    },
+    "user 3" :{
+        "username": "Hind",
+        "email": "hind@gamil.com",
+        "password": "hind123",
+        "phone": "0606060606"
+    }
+}
