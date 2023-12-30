@@ -11,9 +11,9 @@
 
     <main>
         <button id="btn">Data JSON</button>
-        <!-- <div id="output"></div> -->
-     
-        <table >
+        <div id="output"></div>
+
+        <!-- <table >
             <thead>
                 <th>Username</th>
                 <th>Email</th>
@@ -25,14 +25,31 @@
             <tbody id="table">
 
             </tbody>
-        </table>
+        </table> -->
 
     </main>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#btn").click(function(){
+            $.ajax({
+                url:'data.txt',
+                type: 'GET',
+                success: function(data){
+                    $("#output").html(data);
+                }
+            })
+        })
+
+    })
+</script>
 
 
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+<!-- exercice2 -->
+<!-- 
 <script>
     btn = document.getElementById('btn').addEventListener("click", fetchData);
     
@@ -65,10 +82,9 @@
 
     }
 </script>
+ -->
 
-
-
-
+<!-- exercice1 -->
 <!-- <script>
    btn = document.getElementById('btn').addEventListener("click", fetchData);
    output = document.getElementById('output');
