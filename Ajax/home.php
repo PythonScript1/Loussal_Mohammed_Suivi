@@ -11,9 +11,9 @@
 
     <main>
         <button id="btn">Data JSON</button>
-        <div id="output"></div>
+        <!-- <div id="output"></div> -->
 
-        <!-- <table >
+        <table>
             <thead>
                 <th>Username</th>
                 <th>Email</th>
@@ -25,13 +25,45 @@
             <tbody id="table">
 
             </tbody>
-        </table> -->
+        </table>
 
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+<!-- exercice 3-2 -->
 <script>
+    $(document).ready(function() {
+        $("#btn").click(function() {
+            $.ajax({
+                url: 'data.json',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    displayData(data);
+                }
+            });
+        });
+
+        function displayData(data) {
+            var tableBody = $("#table");
+            tableBody.empty(); 
+
+            $.each(data, function(index, user) {
+                var row = $("<tr>");
+                row.append($("<td>").text(user.username));
+                row.append($("<td>").text(user.email));
+                row.append($("<td>").text(user.password));
+                row.append($("<td>").text(user.phone));
+                tableBody.append(row);
+            });
+        }
+    });
+</script>
+
+
+<!-- exercice 3-1 -->
+<!-- <script>
     $(document).ready(function(){
         $("#btn").click(function(){
             $.ajax({
@@ -44,8 +76,7 @@
         })
 
     })
-</script>
-
+</script> -->
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 <!-- exercice2 -->
